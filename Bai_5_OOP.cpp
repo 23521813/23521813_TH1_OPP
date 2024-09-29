@@ -31,7 +31,6 @@ bool ktnamnhuan(int nam) {
 }
 
 int ngaythu(int &ngay, int &thang, int &nam) {
-    int ngayTrongThang[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     if (ktnamnhuan(nam)) {
         ngayTrongThang[1] = 29;
     }

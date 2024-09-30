@@ -24,12 +24,12 @@ bool minimize(X& x, const Y y) {
 	return false;
 }
 
-int gcd(int a, int b) {
+int gcd(int a, int b) { // Ham tinh UCLN cua 2 phan so (Truyen vao 2 so nguyen a va b)
 	return (!b ? a : gcd(b, a % b));
 }
 
 struct fac { // Phan so
-	int p, q;
+	int p, q; // tu so va mau so
 	bool operator < (const fac& z) const { // So sánh 2 phân số.
 		return p * z.q < q * z.p;
 	}

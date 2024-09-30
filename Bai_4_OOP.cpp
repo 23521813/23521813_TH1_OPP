@@ -24,7 +24,7 @@ bool minimize(X& x, const Y y) {
 	return false;
 }
 
-long double Sin(long double x, long double Exp = 0.00001) { // Ham tinh ham sin theo cong thuc cua de bai(Truyen vao thong so x va do sai lech).
+long double Sin(long double x, long double Exp = 0.00001) { // Hàm tính hàm sin theo công thức của đề bài(Truyền vào tham số x và độ sai lệch cần thiết).
 	long double cur = x;
 	long double res = cur;
 	for (int d = 1;fabs(cur) > Exp; ++d) {

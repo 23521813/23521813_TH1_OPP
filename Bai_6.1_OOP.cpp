@@ -29,7 +29,7 @@ const int base = 311;
 
 vector<int> Mod = {(int)(1234567891), (int)(1e9 + 9)};
 
-int expo(int a, int b, int mod) {
+int expo(int a, int b, int mod) { // Tính a mũ b(Truyền vào 2 số a, b và số mod).
     if (!b) {
         return 1;
     }
@@ -41,7 +41,7 @@ int expo(int a, int b, int mod) {
 }
 
 int pw[nax][nMod], inv[nax][nMod];
-void precal() {
+void precal() { // Chuẩn bị mã hash
     for (int j = 0; j < nMod; ++j) {
         pw[0][j] = 1;
     }
@@ -53,7 +53,7 @@ void precal() {
     }
 }
 
-void build(int h[][nMod], int n, int a[]) {
+void build(int h[][nMod], int n, int a[]) { // Xây dựng mã hash(Truyền vào dãy cần xây dựng).
     for (int i = 1; i <= n; ++i) {
         for (int j = 0; j < nMod; ++j) {
             h[i][j] = (h[i - 1][j] + a[i] * pw[i][j]) % Mod[j]; 
@@ -61,7 +61,7 @@ void build(int h[][nMod], int n, int a[]) {
     }
 }
 
-array<int, nMod> get(int h[][nMod], int l, int r) {
+array<int, nMod> get(int h[][nMod], int l, int r) {  // Lấy mã hash của 1 đoạn con(Truyền vào mã hash của dãy cần lấy mã hash, 2 tham số l, r là đầu trái và đầu phải).
     array<int, nMod> res;
     for (int j = 0; j < nMod; ++j) {
         res[j] = (h[r][j] - h[l - 1][j] + Mod[j]) * inv[l][j] % Mod[j];
@@ -69,7 +69,7 @@ array<int, nMod> get(int h[][nMod], int l, int r) {
     return res;
 }
 
-int is_equal(array<int, nMod> a, array<int, nMod> b) {
+int is_equal(array<int, nMod> a, array<int, nMod> b) { // Kiểm tra 2 mã hash có bằng nhau hay không(Truyền vào 2 mã hash cần kiểm tra).
     for (int j = 0; j < nMod; ++j) {
         if (a[j] != b[j]) {
             return false;

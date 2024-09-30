@@ -24,7 +24,7 @@ bool minimize(X& x, const Y y) {
 	return false;
 }
 
-long double Sin(long double x, long double Exp = 0.00001) {
+long double Sin(long double x, long double Exp = 0.00001) { // Ham tinh ham sin theo cong thuc cua de bai(Truyen vao thong so x va do sai lech).
 	long double cur = x;
 	long double res = cur;
 	for (int d = 1;fabs(cur) > Exp; ++d) {

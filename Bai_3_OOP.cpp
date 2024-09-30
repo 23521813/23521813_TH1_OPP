@@ -25,22 +25,22 @@ bool minimize(X& x, const Y y) {
 }
 
 struct fac { // Phân số
-    int p, q;
+    int p, q; // tu so va mau so
 };
 
-fac tong(fac a, fac b) {
+fac tong(fac a, fac b) { // Hàm tính tổng 2 phân số(Truyền vào 2 phân số a và b).
     return {a.p * b.q + b.p * a.q, a.q * b.q};
 }
 
-fac hieu(fac a, fac b) {
+fac hieu(fac a, fac b) {  // Hàm tính hiệu 2 phân số(Truyền vào 2 phân số a và b).
     return {a.p * b.q - b.p * a.q, a.q * b.q};
 }
 
-fac tich(fac a, fac b) {
+fac tich(fac a, fac b) {  // Hàm tính tích 2 phân số(Truyền vào 2 phân số a và b).
     return {a.p * b.p, a.q * b.q};
 }
 
-fac thuong(fac a, fac b) {
+fac thuong(fac a, fac b) {  // Hàm tính thương 2 phân số(Truyền vào 2 phân số a và b).
     return {a.p * b.q, a.q * b.p};
 }
 

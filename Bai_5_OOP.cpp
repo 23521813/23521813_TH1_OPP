@@ -26,11 +26,11 @@ bool minimize(X& x, const Y y) {
 
 int memo[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-bool ktnamnhuan(int nam) {
+bool ktnamnhuan(int nam) { // Hàm kiểm tra năm nhuận (Truyền vào năm).
 	return (nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0);
 }
 
-int ngaythu(int &ngay, int &thang, int &nam) {
+int ngaythu(int &ngay, int &thang, int &nam) { // Hàm tìm ngày thứ mấy trong năm(Truyền vào ngày, tháng, năm).
     if (ktnamnhuan(nam)) {
         ngayTrongThang[1] = 29;
     }
@@ -42,7 +42,7 @@ int ngaythu(int &ngay, int &thang, int &nam) {
     return d;
 }
 
-void ngaytiep(int &ngay, int &thang, int &nam) {
+void ngaytiep(int &ngay, int &thang, int &nam) { // Hàm tìm ngày tiếp theo của ngày nhập vào(Truyền vào ngày, tháng, năm).
 	if (ktnamnhuan(nam)) {
 		memo[1] = 29;
 	}
@@ -58,7 +58,7 @@ void ngaytiep(int &ngay, int &thang, int &nam) {
 	memo[1] = 28;
 }
 
-void ngaytruoc(int &ngay, int &thang, int &nam) {
+void ngaytruoc(int &ngay, int &thang, int &nam) { // Hàm tìm ngày trước của ngày nhập vào(Truyền vào ngày, tháng, năm).
 	if (ktnamnhuan(nam)) {
 		memo[1] = 29;
 	}
@@ -79,7 +79,7 @@ int32_t main() {
 	int ngay, thang, nam;
 	cin >> ngay >> thang  >> nam;
 	int x = ngay, y = thang, z = nam;
-	auto Print = [&]() {
+	auto Print = [&]() { // In kết quả
 		cout << x << "/" << y << "/" << z << '\n';
 		return 0;
 	};

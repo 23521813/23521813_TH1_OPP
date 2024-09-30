@@ -24,7 +24,7 @@ bool minimize(X& x, const Y y) {
     return false;
 }
 
-int gcd(int a, int b) {
+int gcd(int a, int b) { // Hàm tính ƯCLN (Truyền vào 2 số nguyên a và b).
 	return (!b ? a : gcd(b, a % b));
 }
 

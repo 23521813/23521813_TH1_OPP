@@ -24,19 +24,19 @@ bool minimize(X& x, const Y y) {
     return false;
 }
 
-struct Hocsinh {
+struct Hocsinh { // Thong tin hoc sinh
 	string Hoten;
 	double Diemtoan, Diemvan, Diemanh;
 };
 
-bool ktsauhople(string s) {
+bool ktsauhople(string s) { // Kiểm tra xâu hợp lệ
 	for (int i = 0; i < sz(s); ++i) {
 		if (s[i] >= '0' && s[i] <= '9') return false;
 	}
 	return true;
 }
 
-bool ktso(double x) {
+bool ktso(double x) { Kiểm tra số hợp lệ
 	return (x >= 0 && x <= 10);
 };
 

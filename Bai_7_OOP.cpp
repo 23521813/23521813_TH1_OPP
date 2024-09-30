@@ -26,13 +26,13 @@ bool minimize(X& x, const Y y) {
 
 struct ChuyenBay {
     string machuyenbay;
-    string ngaybay; // Dinh dang: DD/MM/YYYY
-    string giobay;  // Dinh dang: HH:MM (24 gio)
+    string ngaybay; // Định dạng: DD/MM/YYYY
+    string giobay;  // Định dạng: HH:MM (24 gio)
     string noiDi;
     string noiDen;
 };
 
-// Ham kiem tra ma chuyen bay (toi da 5 ky tu, khong chua khoang trang va ky tu dac biet)
+//Hàm kiểm tra mã chuyến bay (toi da 5 ky tu, khong chua khoang trang va ky tu dac biet)
 bool ktmacb(const string &s) {
     if (s.length() > 5) return false;
     for (char c : s) {
@@ -41,12 +41,12 @@ bool ktmacb(const string &s) {
     return true;
 }
 
-// Ham kiem tra nam nhuan
+// Hàm kiểm tra năm nhuận(Truyền vào năm)
 bool ktnamnhuan(int nam) {
 	return (nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0;
 }
 
-// Ham kiem tra ngay bay hop le
+// Hàm kiểm tra ngày bay hợp lệ(Truyền vào ngày)
 bool ngayktngaycb(const string &ngay) {
     if (ngay.length() != 10 || ngay[2] != '/' || ngay[5] != '/') return false;
     int Ngay = stoi(ngay.substr(0, 2));
@@ -60,7 +60,7 @@ bool ngayktngaycb(const string &ngay) {
     return Ngay <= ngayTrongThang[Thang - 1];
 }
 
-// Ham kiem tra gio bay hop le
+// Hàm kiểm tra giừ bay hợp lệ(Truyền vào giờ)
 bool ktgiobay(const string &gio) {
     if (gio.length() != 5 || gio[2] != ':') return false;
     int Gio = stoi(gio.substr(0, 2));
@@ -68,7 +68,7 @@ bool ktgiobay(const string &gio) {
     return Gio >= 0 && Gio <= 23 && Phut >= 0 && Phut <= 59;
 }
 
-// Ham kiem tra dia diem
+// Hàm kiem tra địa diểm(Truyền vào địa điểm)
 bool ktdiadiem(const string &s) {
     if (s.length() > 20) return false;
     for (char c : s) {
@@ -77,7 +77,7 @@ bool ktdiadiem(const string &s) {
     return true;
 }
 
-// Ham nhap thong tin chuyen bay
+// Hàm nhập
 ChuyenBay input() {
     ChuyenBay cb;
     do {
